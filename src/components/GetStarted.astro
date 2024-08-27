@@ -1,4 +1,16 @@
 ---
+type Props = {
+  title: string;
+  description: string;
+  btn: {
+    text: string;
+    href: string;
+  };
+  image: {
+    src: string;
+    alt: string;
+  };
+};
 const { title, description, btn, image } = Astro.props;
 ---
 
@@ -29,8 +41,8 @@ const { title, description, btn, image } = Astro.props;
   </div>
 
   <img
-   alt={image.alt}
-   src={image.src}
+    alt={image.alt}
+    src={image.src}
     class="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
   />
 </section>

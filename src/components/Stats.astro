@@ -1,4 +1,12 @@
 ---
+type Props = {
+  stats: {
+    stat: string;
+    text: string;
+  }[];
+  title: string;
+  description: string;
+};
 const { stats, title, description } = Astro.props;
 ---
 
