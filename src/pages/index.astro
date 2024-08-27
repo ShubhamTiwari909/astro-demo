@@ -65,7 +65,10 @@ const testimonialSlider = [
 ];
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout
+  title="Welcome to Astro."
+  scripts={["https://identity.netlify.com/v1/netlify-identity-widget.js"]}
+>
   <Hero />
   <Features />
   <Products
