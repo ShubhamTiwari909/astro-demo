@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 type Props = {
   title: string;
   description: string;
@@ -40,9 +42,12 @@ const { title, description, btn, image } = Astro.props;
     </div>
   </div>
 
-  <img
-    alt={image.alt}
-    src={image.src}
+  <Image
+    title={image.alt || ""}
+    alt={image.alt || ""}
+    src={image.src || ""}
+    width="720"
+    height="460"
     class="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
   />
 </section>

@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 type Props = {
   title: string;
   description: string;
@@ -38,9 +40,11 @@ const { title, description, products } = Astro.props;
           }) => {
             <li>
               <a href="#" class="group block overflow-hidden">
-                <img
+                <Image
                   src={image.src}
                   alt={image.alt}
+                  width={300}
+                  height={350}
                   class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                 />
 
