@@ -67,8 +67,7 @@ const testimonialSlider = [
 
 <Layout
   title="Welcome to Astro."
-  links={["node_modules/keen-slider/keen-slider.min.css"]}
-  scripts={["node_modules/keen-slider/keen-slider.js"]}
+  links={["https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css"]}
 >
   <Hero />
   <Features />
@@ -110,7 +109,6 @@ const testimonialSlider = [
     }}
   />
   <Testimonial
-    client:load
     title="Don't just take our word for it..."
     description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas veritatis illo placeat harum porro optio fugit a culpa sunt id!"
     slider={testimonialSlider}
