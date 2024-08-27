@@ -4,10 +4,11 @@ import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
-  scripts?: any;
+  links?: string[];
+  scripts?: string[];
 }
 
-const { title, scripts } = Astro.props;
+const { title, links, scripts } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,22 +21,29 @@ const { title, scripts } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     {
-      scripts.map((href: string) => {
-        return (
-          <link
-            rel="preload"
-            href={href}
-            as="style"
-            rel="stylesheet"
-            onload="this.onload=null;this.rel='stylesheet'"
-          />
-        );
-      })
+      links &&
+        links.map((href: string) => {
+          return (
+            <link
+              rel="preload"
+              href={href}
+              as="style"
+              rel="stylesheet"
+              onload="this.onload=null;this.rel='stylesheet'"
+            />
+          );
+        })
     }
   </head>
   <body>
     <Navbar />
     <main><slot /></main>
     <Footer />
+    {
+      scripts &&
+        scripts.map((href: string) => {
+          return <script src={href} defer />;
+        })
+    }
   </body>
 </html>
